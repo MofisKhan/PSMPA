@@ -1,0 +1,33 @@
+version: '3'
+services:
+
+             db:
+                image: mysql
+                environment:
+                     MYSQL_ROOT_PASSWORD: root
+                     MYSQL_DATABASE: psmpadb
+                     MYSQL_USER: root
+                     MYSQL_PASSWORD: root
+                ports:
+                     - 3307:3307
+               # healthcheck:
+               #      test: ["CMD","docker-entrypoint.sh", "mysqld"]
+
+               # volumes:
+               #      - ./db:/docker-entrypoint-initdb.d
+
+             web:
+                image: tomcat:alpine
+                # Environment variables do not appear to be getting loaded the first time Tomcat starts!
+                environment:
+                  JDBC_URL: jdbc:mysql://db:3307/psmpadb?connectTimeout=0&amp;socketTimeout=0&amp;autoReconnect=true
+                  JDBC_USER: root
+                  JDBC_PASS: root
+                ports:
+                   - 8001:8080
+                volumes:
+                 - targets/webapps:/usr/local/tomcat/webapps
+                healthcheck:
+                   test: ["CMD","catalina.sh" ,"run"]
+                depends_on:
+                   - db
