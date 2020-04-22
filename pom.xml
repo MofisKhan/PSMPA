@@ -4,23 +4,24 @@
   <artifactId>PSMPA</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <build>
-    <sourceDirectory>src</sourceDirectory>
-    
- <dependencies>
+
+<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 		</dependency>	
-	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
     			<groupId>mysql</groupId>
 		                 <artifactId>mysql-connector-java</artifactId>
     			<version>5.1.11</version>
 		</dependency>
 </dependencies>
-    
+
+  <build>
+    <sourceDirectory>src</sourceDirectory>    
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
