@@ -1,0 +1,25 @@
+pipeline {
+   
+   agent {
+   label 'slave'
+   }
+   
+   stages {
+      stage('GIT poll') {
+         steps {
+            git url: 'https://github.com/MofisKhan/PSMPA' 
+         }
+      }
+      
+      stage('maven build'){      
+        steps{
+              sh 'mvn package'
+          }
+      }
+       stage("build docker image"){
+            steps{
+                sh 'docker-compose up -d'
+            }
+         }   
+       }
+}
