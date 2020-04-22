@@ -6,6 +6,21 @@
   <packaging>war</packaging>
   <build>
     <sourceDirectory>src</sourceDirectory>
+    
+ <dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>	
+	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+    			<groupId>mysql</groupId>
+		                 <artifactId>mysql-connector-java</artifactId>
+    			<version>5.1.11</version>
+		</dependency>
+</dependencies>
+    
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -23,21 +38,5 @@
         </configuration>
       </plugin>
     </plugins>
-  </build>
-  <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>javax.servlet-api</artifactId>
-    <version>3.1.0</version>
-    <scope>provided</scope>
-</dependency>
-
-  <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-<dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>5.1.1</version>
-</dependency>
-
-  
+  </build> 
 </project>
