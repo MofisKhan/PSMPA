@@ -27,9 +27,7 @@ services:
                 ports:
                    - 8001:8080
                 volumes:
-                 -type : volume
-                 source: targets/
-                 target: /usr/local/tomcat/webapps
+                 - .: /usr/local/tomcat/webapps
                  
                 healthcheck:
                    test: ["CMD","catalina.sh" ,"run"]
