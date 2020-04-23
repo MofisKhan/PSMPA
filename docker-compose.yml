@@ -23,6 +23,7 @@ services:
                   JDBC_URL: jdbc:mysql://db:3307/psmpadb?connectTimeout=0&amp;socketTimeout=0&amp;autoReconnect=true
                   JDBC_USER: root
                   JDBC_PASS: root
+                  CATALINA_HOME: /usr/local/tomcat
                 ports:
                    - 8001:8080
                 volumes:
