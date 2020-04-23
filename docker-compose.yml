@@ -27,7 +27,8 @@ services:
                 ports:
                    - 8001:8080
                 volumes:
-                 - .: /usr/local/tomcat/webapps
+                   - ./target/PSMPA-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/PSMPA-0.0.1-SNAPSHOT.war
+                   - ./target/PSMPA-0.0.1-SNAPSHOT:/usr/local/tomcat/webapps/PSMPA-0.0.1-SNAPSHOT
                  
                 healthcheck:
                    test: ["CMD","catalina.sh" ,"run"]
