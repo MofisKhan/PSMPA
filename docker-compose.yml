@@ -25,8 +25,8 @@ services:
                   JDBC_PASS: root
                 ports:
                    - 8001:8080
-               # volumes:
-               #  - targets/webapps:/usr/local/tomcat/webapps
+                volumes:
+                 - targets/webapps:$CATALINA_HOME/webapps
                 healthcheck:
                    test: ["CMD","catalina.sh" ,"run"]
                 depends_on:
